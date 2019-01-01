@@ -1,0 +1,164 @@
+﻿<%@ Master Language="VB" CodeFile="MainMaster.master.vb" Inherits="MainMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+   <title>Food_Template Bootstrap Responsive Website Template | order page :: w3layouts</title>
+<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Lobster+Two:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<!--Animation-->
+<script src="js/wow.min.js"></script>
+<link href="css/animate.css" rel='stylesheet' type='text/css' />
+<script>
+    new WOW().init();
+</script>
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+        });
+    });
+		</script>
+<script src="js/jquery.carouFredSel-6.1.0-packed.js"></script>
+<script src="js/tms-0.4.1.js"></script>
+<script>
+ $(window).load(function(){
+      $('.slider')._TMS({
+              show:0,
+              pauseOnHover:false,
+              prevBu:'.prev',
+              nextBu:'.next',
+              playBu:false,
+              duration:800,
+              preset:'fade', 
+              pagination:true,//'.pagination',true,'<ul></ul>'
+              pagNums:false,
+              slideshow:8000,
+              numStatus:false,
+              banners:false,
+          waitBannerAnimation:false,
+        progressBar:false
+      })  
+      });
+      
+     $(window).load (
+    function(){$('.carousel1').carouFredSel({auto: false,prev: '.prev',next: '.next', width: 960, items: {
+      visible : {min: 1,
+       max: 4
+},
+height: 'auto',
+ width: 240,
+
+    }, responsive: false, 
+    
+    scroll: 1, 
+    
+    mousewheel: false,
+    
+    swipe: {onMouse: false, onTouch: false}});
+    
+    
+    });      
+
+     </script>
+<script src="js/jquery.easydropdown.js"></script>
+<script src="js/simpleCart.min.js"> </script>	
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+<!-- header-section-start -->
+<div class="header">
+		<div class="container">
+			<div class="top-header">
+				<div class="logo">
+					<a href="index.html"><img src="images/logo.png" class="img-responsive" alt="" /></a>
+				</div>
+				<div class="queries">
+					<p>Questions? Call us Toll-free!<span>1800-0000-7777 </span><label>(11AM to 11PM)</label></p>
+				</div>
+				<div class="header-right">
+						<div class="cart box_1">
+							<a href="checkout.html">
+								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
+							</a>	
+							<p><a href="javascript:;" class="simpleCart_empty">Empty card</a></p>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+			<div class="menu-bar">
+			<div class="container">
+				<div class="top-menu">
+					<ul>
+						<li><a href="index.html">Home</a></li>|
+						<li><a href="restaurants.html">Popular Restaurants</a></li>|
+						<li class="active"><a href="order.html">Order</a></li>|
+						<li><a href="contact.html">contact</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+                <form id="form2" runat="server">
+				<div class="login-section">
+					<ul>
+						<li> 
+                            <asp:LinkButton ID="LinkButton1" runat="server">LinkButton</asp:LinkButton></li> |
+						<li><a href="register.aspx">Register</a> </li> |
+						<li><a href="#">Help</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+                </form>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</div>
+	<!-- header-section-ends -->
+    <form id="form1" runat ="server" >
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+    <!-- footer-section-starts -->
+	<div class="footer">
+		<div class="container">
+			<p class="wow fadeInLeft" data-wow-delay="0.4s">&copy; 2014  All rights  Reserved | Template by &nbsp;<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+	  <script type="text/javascript">
+	      $(document).ready(function () {
+	          /*
+	          var defaults = {
+	          containerID: 'toTop', // fading element id
+	          containerHoverID: 'toTopHover', // fading element hover id
+	          scrollSpeed: 1200,
+	          easingType: 'linear' 
+	          };
+	          */
+
+	          $().UItoTop({ easingType: 'easeOutQuart' });
+
+	      });
+					</script>
+				<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+</body>
+</html>
