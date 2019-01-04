@@ -34,7 +34,9 @@
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" />
+
+     <link rel="stylesheet" type="text/css" href="assets/datetimepicker/jquery.datetimepicker.css"/>
+
     <asp:ContentPlaceHolder id="head" runat="server">
     
     </asp:ContentPlaceHolder>
@@ -267,12 +269,12 @@
 	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
 	<script src="assets/js/demo.js"></script>
     
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/datetimepicker/jquery.js"></script>
+    <script src="assets/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+
     <script src='<%=ResolveUrl("~/Webcam_Plugin/jquery.webcam.js") %>' type="text/javascript"></script>
-<script type ="text/javascript">
-    var role = '<%=Session("role") %>'
-   //  alert(role);
-   
-</script>
+    <script type ="text/javascript">
+        var role = '<%=Session("role") %>'
+        //  alert(role);
+    </script>
 </html>

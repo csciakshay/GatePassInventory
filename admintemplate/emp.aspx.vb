@@ -8,6 +8,7 @@ Partial Class admintemplate_emp
     Dim con As New DataBase
 
     Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+
         con.doConnection()
         Dim gender As String
         gender = ""
