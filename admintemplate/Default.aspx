@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
+<script src="assets/datetimepicker/jquery.js"></script>
+    <script src="assets/datetimepicker/jquery.datetimepicker.full.min.js"></script>
+
 <script src='<%=ResolveUrl("~/Webcam_Plugin/jquery.webcam.js") %>' type="text/javascript"></script>
 
        <script type="text/javascript">
@@ -167,8 +170,9 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                             <label>Picture</label>
-                                               
-                                                 <asp:Image ID="imgCapture" runat="server" Style="width: 200px; height: 100px" />
+                                                <asp:Image ID="imgCapture" runat="server" Style="width: 100px; height: 100px" />
+                                                <asp:Image ID="imgBarCode" runat="server" Style="width: 150px; height: 150px" />  
+                                                <%--<asp:PlaceHolder ID="plBarCode" runat="server"></asp:PlaceHolder>--%>
                                                  <br />
                                                  <asp:Button ID="btnCapture" Text="Capture" runat="server" class="btn btn-info btn-fill pull-right" OnClientClick="return Capture();" />
                                                  <br />
@@ -179,10 +183,11 @@
                                     <br />
                                 <div class="row">
                                 <div class="col-md-2"></div>
-                                <div class="col-md-6">
+                                <div class="col-md-8">
                                 <asp:Button ID="Button1" runat="server" Text="Save" class="btn btn-success btn-fill"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <asp:Button ID="Button2" runat="server" Text="Out" class="btn btn-danger btn-fill "/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                                    
-                                <asp:Button ID="Button3" runat="server" Text="Clear" class="btn btn-info btn-fill"/>
+                                <asp:Button ID="Button3" runat="server" Text="Clear" class="btn btn-info btn-fill"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <asp:Button ID="Button5" runat="server" Text="Print" class="btn btn-edit btn-fill" />
                                     <div class="clearfix"></div>
                                  </div>
                                  <div class="col-md-2"></div>

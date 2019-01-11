@@ -32,6 +32,7 @@
                                                                 <ItemTemplate>
                                                                      <asp:Button ID="Button2" Text="Present" runat="server" CommandName="Select" CommandArgument="<%# Container.DataItemIndex %>" />
                                                                      </ItemTemplate>
+                                                                <ControlStyle BackColor="#6699FF" CssClass="success" />
                                                          </asp:TemplateField>
                                                     </Columns>
                                                     <FooterStyle BackColor="White" ForeColor="#333333" />
@@ -48,6 +49,20 @@
                                                     ConnectionString="<%$ ConnectionStrings:ApplicationServices %>" 
                                                     SelectCommand="SELECT [empid], [empname], [departmentid], [designation] FROM [empmaster]">
                                                 </asp:SqlDataSource>
+                                                <asp:GridView ID="GridView2" runat="server" CellPadding="4" ForeColor="#333333" 
+                                                    GridLines="None">
+                                                    <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
+                                                    <EditRowStyle BackColor="#999999" />
+                                                    <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                    <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                                                    <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                                                    <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                                                    <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                                                    <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                                                    <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                                                    <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                                                    <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                                                </asp:GridView>
                                             </div>
                                         </div>
                                      

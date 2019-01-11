@@ -23,14 +23,34 @@ Partial Class admintemplate_empAttend
             cmd.CommandText = "StoredProcedure3"
             cmd.CommandType = CommandType.StoredProcedure
             cmd.Parameters.AddWithValue("EmpId", country)
-            cmd.Parameters.AddWithValue("PreDate", Now.Date)
+            cmd.Parameters.AddWithValue("PreDate", DateTime.Now)
             cmd.Parameters.AddWithValue("Present", "Y")
 
             If cmd.ExecuteNonQuery() Then
                 ClientScript.RegisterClientScriptBlock(Me.GetType(), "alert", con.alertMessage("Registration Success..."))
                 ' Response.Redirect("~/login/login.aspx")
             End If
+
             con.ConnectionClose()
+            fillAttendance()
         End If
+    End Sub
+  
+    Protected Sub fillAttendance()
+        Dim format As String = "yyyy-MM-dd"
+        con.doConnection()
+        Dim cmd As New SqlCommand("select * from attendancemaster where CONVERT(VARCHAR(25), pre_date, 126) LIKE '" + Now.Date.ToString(format) + "%'", con.DBConnection)
+        Dim adp As New SqlDataAdapter()
+        Dim ds As New Data.DataSet()
+        adp.SelectCommand = cmd
+        adp.Fill(ds)
+        MsgBox(ds.Tables(0).Rows.Count)
+        GridView2.DataSource = ds.Tables(0)
+        GridView2.DataBind()
+        con.ConnectionClose()
+    End Sub
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        fillAttendance()
     End Sub
 End Class
