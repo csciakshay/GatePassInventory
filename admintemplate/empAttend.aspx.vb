@@ -16,7 +16,7 @@ Partial Class admintemplate_empAttend
             Dim row As GridViewRow = GridView1.Rows(rowIndex)
 
             Dim country As String = row.Cells(0).Text
-            MsgBox(country)
+            ' MsgBox(country)
             con.doConnection()
             Dim cmd As New SqlCommand()
             cmd.Connection = con.DBConnection
@@ -44,7 +44,7 @@ Partial Class admintemplate_empAttend
         Dim ds As New Data.DataSet()
         adp.SelectCommand = cmd
         adp.Fill(ds)
-        MsgBox(ds.Tables(0).Rows.Count)
+        ' MsgBox(ds.Tables(0).Rows.Count)
         GridView2.DataSource = ds.Tables(0)
         GridView2.DataBind()
         con.ConnectionClose()

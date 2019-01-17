@@ -18,7 +18,12 @@ Partial Class login
             Session("role") = dt.Rows(0)("Role")
             Session("userimage") = dt.Rows(0)("Profilepic")
             Session("uname") = TextBox1.Text
-            Response.Redirect("~/admintemplate/Default.aspx")
+            If dt.Rows(0)("Role").Equals("admin") Then
+                Response.Redirect("~/admintemplate/AdminHome.aspx")
+            Else
+                Response.Redirect("~/admintemplate/UserHome.aspx")
+            End If
+
         Else
             Response.Redirect("~/login/login.aspx")
         End If

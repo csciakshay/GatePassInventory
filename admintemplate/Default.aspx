@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="VB" MasterPageFile="~/admintemplate/MasterPage.master" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="admintemplate_Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 
 <script src="assets/datetimepicker/jquery.js"></script>
     <script src="assets/datetimepicker/jquery.datetimepicker.full.min.js"></script>
@@ -12,10 +12,12 @@
            $(function () {
                jQuery('#TextBox7').datetimepicker({
                    format: 'd/m/Y H:i',
+                   step: 1,
                    minDate: new Date()
                });
                jQuery('#TextBox8').datetimepicker({
                    format: 'd/m/Y H:i',
+                   step: 1,
                    minDate: new Date()
                });
            });
@@ -91,7 +93,11 @@
                                         <div class="col-md-5">
                                             <div class="form-group">
                                                 <label>Visitor Name</label>
+                                                
                                                <asp:TextBox ID="TextBox2" runat="server" class="form-control" placeholder="Visitorname"></asp:TextBox>
+                                               <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                                    ErrorMessage="RequiredFieldValidator" ControlToValidate="TextBox2" 
+                                                    ForeColor="Red">Enter name</asp:RequiredFieldValidator>
                                                 <%--<input type="text" class="form-control" placeholder="Username" value="michael23">--%>
                                             </div>
                                         </div>
@@ -214,7 +220,7 @@
                                        <div class="row">
                                        <div class="col-md-12">
                                             <div class="form-group">
-                                             <asp:Button ID="Button4" runat="server" Text="Search" class="btn btn-success btn-fill pull-right"/>                                    
+                                             <asp:Button ID="Button4" runat="server" Text="Search" class="btn btn-success btn-fill pull-right" CausesValidation = "false" />                                    
                                             </div>
                                         </div>
                                        </div>
